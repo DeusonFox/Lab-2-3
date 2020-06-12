@@ -10,23 +10,15 @@ namespace TextToVector
 {
     public class TextFile
     {
-        private SortedDictionary<string, int> Dict;
-        private HashSet<string> Set;
+        private SortedDictionary<string, int> Dict = new SortedDictionary<string, int>();
+        private HashSet<string> Set = new HashSet<string>();
         private double Length; //количество слов
-        public TextFile()
-        {
-            Length = 0;
-            Dict = new SortedDictionary<string, int>();
-            Set = new HashSet<string>();
-        }
         public TextFile(string fileName)
         {
-            Dict = new SortedDictionary<string, int>();
-            Set = new HashSet<string>();
             Length = 0;
             Add(fileName);
         }
-        /// добавление текста из файла
+        // добавление текста из файла
         public void Add(string filename)
         {
             StreamReader input = new StreamReader(filename);
@@ -34,15 +26,12 @@ namespace TextToVector
             {
                 string text = input.ReadLine();
                 string[] textArr = Regex.Replace(
-               new string(text.Where(x => char.IsWhiteSpace(x) || char.IsLetter(x)).Select(char.ToLower)
-                   .ToArray()), @"\s+", " ").Split();
+                new string(text.Where(x => char.IsWhiteSpace(x) || char.IsLetter(x)).Select(char.ToLower).ToArray()), @"\s+", " ").Split();
                 Length += textArr.Length;
                 foreach (string word in textArr)
                 {
-                    if (Dict.ContainsKey(word))
-                        Dict[word]++;
-                    else
-                        Dict[word] = 1;
+                    if (Dict.ContainsKey(word)) Dict[word]++;
+                    else Dict[word] = 1;
                     Set.Add(word);
                 }
             }

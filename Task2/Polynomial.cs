@@ -114,10 +114,8 @@ namespace Task2
         {
             get
             {
-                if (index > 0 && index <= this.Degree)
-                    return this.coefficients[index];
-                else
-                    throw new IndexOutOfRangeException();
+                if (index >= 0 && index <= this.Degree) return this.coefficients[index];
+                else throw new IndexOutOfRangeException();
             }
         }
 

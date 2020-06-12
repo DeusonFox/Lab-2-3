@@ -12,8 +12,16 @@ namespace Task1
         public int Denominator { get; private set; }
         public Fraction(int numerator, int denominator)
         {
-            Numerator = numerator;
-            Denominator = denominator;
+            if (numerator == 0 || denominator == 0)
+            {
+                Numerator = 0;
+                Denominator = 0;
+            }
+            else
+            {
+                Numerator = numerator;
+                Denominator = denominator;
+            }
             Reduction();
         }
         public static int NOD(int m, int n)
@@ -48,7 +56,14 @@ namespace Task1
         }
         public override string ToString()
         {
-            return Numerator.ToString() + "/" + Denominator.ToString();
+            //if (Numerator == 0 || Denominator == 0)
+            //{
+            //    Numerator = 0;
+            //    Denominator = 0;
+            //    return Numerator.ToString() + "/" + Denominator.ToString();
+            //}
+            //else 
+                return Numerator.ToString() + "/" + Denominator.ToString();
         }
         public Fraction Reduction()
         {

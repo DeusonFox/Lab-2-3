@@ -22,6 +22,8 @@ namespace PolynomialTest
         public void DegreeWithZeroAtTheEnd()
         {
             Polynomial p = new Polynomial(new double[4] { 3, -2, 0, 0 });
+            //Assert.AreEqual(3, p[0]);
+            Assert.AreEqual("-2x+3", p.ToString());
             Assert.AreEqual(1, p.Degree);
         }
         [TestMethod]

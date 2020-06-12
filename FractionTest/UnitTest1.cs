@@ -10,22 +10,27 @@ namespace FractionTest
 		[TestMethod]
 		public void tostringtest()
 		{
-			var v1 = new Fraction(2, 4);
-			Assert.AreEqual("1/2", v1.ToString());
-		}
-
-		[TestMethod]
-		public void equalstest()
-		{
-			var v1 = new Fraction(2, -4);
-			var v2 = new Fraction(-2, 4);
-			bool expected = true;
-			bool actual = Fraction.Equals(v1, v2);
-			Assert.AreEqual(actual, expected);
+			var v1 = new Fraction(2, 0);
+			Assert.AreEqual("0/0", v1.ToString());
 		}
 
 		[TestMethod]
 		public void equalstest1()
+		{
+			var v1 = new Fraction(2, -4);
+			var v2 = new Fraction(-4, 8);
+			Assert.AreEqual(Convert.ToBoolean(Fraction.Equals(v1, v2)), true);
+		}
+		[TestMethod]
+		public void equalstest2()
+		{
+			var v1 = new Fraction(5, -7);
+			var v2 = new Fraction(-8, 6);
+			Assert.AreEqual(Convert.ToBoolean(Fraction.Equals(v1, v2)), false);
+		}
+
+		[TestMethod]
+		public void equalstest3()
 		{
 			var v1 = new Fraction(2, 4);
 			var v2 = v1;

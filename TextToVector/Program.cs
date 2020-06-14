@@ -13,6 +13,6 @@ namespace TextToVector
             TextFile text_1 = new TextFile("../../TextFile1.txt");
             TextFile text_2 = new TextFile("../../TextFile2.txt");
             Console.WriteLine(TextFile.Cos(text_1, text_2));
-        }
+        }   
     }
 }

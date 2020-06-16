@@ -12,24 +12,51 @@ namespace Task1
         public int Denominator { get; private set; }
         public Fraction(int numerator, int denominator)
         {
-            if (numerator == 0 || denominator == 0)
+            try
             {
-                Numerator = 0;
-                Denominator = 0;
+                if (denominator == 0)
+                {
+                    Numerator = 0;
+                    Denominator = 0;
+                    //Console.WriteLine(numerator + "/" + denominator + " - В знаменателе не может быть нуля");
+                    //throw new Exception(numerator + "/" + denominator + " - В знаменателе не может быть нуля");
+                    throw new Exception("Несуществующая дробь - ");
+                }
+                //if (numerator == 0 && denominator > 0)
+                //{
+                //    //Console.WriteLine(numerator + "/" + denominator + " - Дробь равна 0");
+                //    //throw new Exception(numerator + "/" + denominator + " - Дробь равна 0");
+                //    //Numerator = numerator;
+                //    //Denominator = denominator;
+                //    Numerator = numerator;
+                //    Denominator = denominator;
+                //    throw new Exception("Дробь равна нулю - ");
+                //}
+
+                if (denominator < 0)
+                {
+                    Numerator = -numerator;
+                    Denominator = -denominator;
+                    Reduction();
+                }
+                else
+                {
+                    Numerator = numerator;
+                    Denominator = denominator;
+                    Reduction();
+                }
             }
-            else
+            catch (Exception e)
             {
-                Numerator = numerator;
-                Denominator = denominator;
+                Console.Write(e.Message);
             }
-            Reduction();
         }
         public static int NOD(int m, int n)
         {
             int temp;
             m = Math.Abs(m);
             n = Math.Abs(n);
-            while (n != 0 && m != 0)
+            while (m != 0 && n != 0)
             {
                 if (m % n > 0)
                 {
@@ -39,7 +66,7 @@ namespace Task1
                 }
                 else break;
             }
-            if (n != 0 && n != 0) return n;
+            if (m != 0 && n != 0) return n;
             else return 0;
         }
         public static bool Equals(Fraction a, Fraction b)
@@ -56,19 +83,24 @@ namespace Task1
         }
         public override string ToString()
         {
-            //if (Numerator == 0 || Denominator == 0)
+            //try
             //{
-            //    Numerator = 0;
-            //    Denominator = 0;
-            //    return Numerator.ToString() + "/" + Denominator.ToString();
+            //    if (Numerator == 0 && Denominator > 0)
+            //    {
+            //        throw new Exception("Дробь равна нулю - ");
+            //    }
+            //    else return Numerator.ToString() + "/" + Denominator.ToString();
             //}
-            //else 
-                return Numerator.ToString() + "/" + Denominator.ToString();
+            //catch (Exception e)
+            //{
+            //    Console.Write(e.Message);
+            //}
+            return Numerator.ToString() + "/" + Denominator.ToString();
         }
         public Fraction Reduction()
         {
             int nod = NOD(Numerator, Denominator);
-            if (nod > 1)
+            if (nod != 0)
             {
                 Numerator /= nod;
                 Denominator /= nod;

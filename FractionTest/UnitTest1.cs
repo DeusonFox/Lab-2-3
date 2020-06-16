@@ -10,8 +10,8 @@ namespace FractionTest
 		[TestMethod]
 		public void tostringtest()
 		{
-			var v1 = new Fraction(2, 0);
-			Assert.AreEqual("0/0", v1.ToString());
+			var v1 = new Fraction(4, 7);
+			Assert.AreEqual("4/7", v1.ToString());
 		}
 
 		[TestMethod]
@@ -90,7 +90,7 @@ namespace FractionTest
 		[TestMethod]
 		public void plus_operatorwithzero()
 		{
-			var v1 = new Fraction(0, 0);
+			var v1 = new Fraction(0, 3);
 			var v2 = new Fraction(1, 2);
 			Assert.AreEqual((v1 + v2).ToString(), "1/2");
 		}
@@ -105,7 +105,7 @@ namespace FractionTest
 		[TestMethod]
 		public void minus_operatorwithzero()
 		{
-			var v1 = new Fraction(0, 0);
+			var v1 = new Fraction(0, 5);
 			var v2 = new Fraction(3, 5);
 			Assert.AreEqual((v1 - v2).ToString(), "-3/5");
 		}
@@ -130,7 +130,7 @@ namespace FractionTest
 		public void multiplication_operatorwithzero()
 		{
 			var v1 = new Fraction(1, 5);
-			var v2 = new Fraction(0, 0);
+			var v2 = new Fraction(0, 7);
 			Assert.AreEqual((v1 * v2).ToString(), "0/0");
 		}
 
@@ -145,7 +145,7 @@ namespace FractionTest
 		[TestMethod]
 		public void division_operatorwithzero()
 		{
-			var v1 = new Fraction(0, 0);
+			var v1 = new Fraction(0, 4);
 			var v2 = new Fraction(1, 5);
 			Assert.AreEqual((v1 / v2).ToString(), "0/0");
 		}
@@ -160,7 +160,7 @@ namespace FractionTest
 		[TestMethod]
 		public void pow_operatorwithzero2()
 		{
-			var v1 = new Fraction(0, 0);
+			var v1 = new Fraction(0, 3);
 			Assert.AreEqual((Fraction.Pow(v1, 0)).ToString(), "1/1");
 		}
 

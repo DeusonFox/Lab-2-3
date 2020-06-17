@@ -26,7 +26,7 @@ namespace Task1
                 if (denominator == 0 && numerator == 0)
                 {
                     //throw new Exception(numerator + "/" + denominator + " - Дробь равна нулю");
-                    throw new Exception("Дробь равна нулю ");
+                    throw new Exception("Дробь равна нулю - ");
 
                 }
                 //if (numerator == 0 && denominator > 0)

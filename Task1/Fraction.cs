@@ -20,7 +20,7 @@ namespace Task1
                     //Denominator = 0;
                     //Console.WriteLine(numerator + "/" + denominator + " - В знаменателе не может быть нуля");
                     //throw new Exception(numerator + "/" + denominator + " - В знаменателе не может быть нуля");
-                    throw new Exception("Несуществующая дробь - ");
+                    throw new Exception("Несуществующая дробь");
 
                 }
                 //if (numerator == 0 && denominator > 0)

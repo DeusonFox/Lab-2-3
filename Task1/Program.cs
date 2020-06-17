@@ -12,15 +12,14 @@ namespace Task1
         {
 			Fraction one = new Fraction(-3, 9);
 			Fraction two = new Fraction(3, -9);
-			Console.WriteLine(one - two);
-			Console.WriteLine(two - one);
-			//Fraction three = new Fraction(0, 2);
+			Fraction three = new Fraction(0, 2);
+			Fraction dsf = new Fraction(5, 0);
 			//	Console.WriteLine("Сложение");
 			//	Console.WriteLine(one + two);
 			//	Console.WriteLine(one + three);
-			//	Console.WriteLine("Вычитание");
-			//	Console.WriteLine(one - two);
-			//	Console.WriteLine(two - one);
+			Console.WriteLine("Вычитание");
+			Console.WriteLine(one - two);
+			Console.WriteLine(two - one);
 			//	Console.WriteLine("Умножение");
 			//	Console.WriteLine(one * two);
 			//	Console.WriteLine(one * three);

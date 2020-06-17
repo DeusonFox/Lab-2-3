@@ -19,16 +19,20 @@ namespace Task1
                     //Numerator = 0;
                     //Denominator = 0;
                     //Console.WriteLine(numerator + "/" + denominator + " - В знаменателе не может быть нуля");
-                    //throw new Exception(numerator + "/" + denominator + " - В знаменателе не может быть нуля");
-                    throw new Exception("Несуществующая дробь");
+                    throw new Exception(numerator + "/" + denominator + " - В знаменателе не может быть нуля");
+                    //throw new Exception("Создана несуществующая дробь");
+
+                }
+                if (denominator == 0 && numerator == 0)
+                {
+                    //throw new Exception(numerator + "/" + denominator + " - Дробь равна нулю");
+                    throw new Exception("Дробь равна нулю ");
 
                 }
                 //if (numerator == 0 && denominator > 0)
                 //{
                 //    //Console.WriteLine(numerator + "/" + denominator + " - Дробь равна 0");
                 //    //throw new Exception(numerator + "/" + denominator + " - Дробь равна 0");
-                //    //Numerator = numerator;
-                //    //Denominator = denominator;
                 //    Numerator = numerator;
                 //    Denominator = denominator;
                 //    throw new Exception("Дробь равна нулю - ");

@@ -14,13 +14,14 @@ namespace Task1
         {
             try
             {
-                if (denominator == 0)
+                if (denominator == 0 && numerator > 0)
                 {
-                    Numerator = 0;
-                    Denominator = 0;
+                    //Numerator = 0;
+                    //Denominator = 0;
                     //Console.WriteLine(numerator + "/" + denominator + " - В знаменателе не может быть нуля");
                     //throw new Exception(numerator + "/" + denominator + " - В знаменателе не может быть нуля");
                     throw new Exception("Несуществующая дробь - ");
+
                 }
                 //if (numerator == 0 && denominator > 0)
                 //{
